@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <link rel="icon" type="image/x-icon" href="assets/favicon.png">
+        <title>Spectre</title>
+    </head>
+    <body>
+        <div>
+            <h1>Introduction</h1>
+            <p1>
+                Inspiration for the Plugin API came from Minecraft's Bukkit, Spigot and Paper plugin APIs, which are heavily event based, rather than Fabric, Forge and Sponge's
+                approach of allowing injection or mixins for game-client and game-server change. Mojang as a developer, in my opinion, is flawed in its backing of MCP as it
+                shouldn't be down to the community to develop mod loaders. Mojang should've developed their own API, keeping the low level, solo made networking and general
+                spaghetti code hidden away to prevent the prevalence of ingame cheaters. While Optifine and many client side mods would've never been able to occur with
+                a locked down, safe API, safe client API hooks, game optimisation and bundled textures + models, much like in gmod, would allow for 99.9% of current
+                legit mods to be capable with proposed changes. However, this is my solo game engine project, so while I cannot influence Mojang, I can build my miniproject
+                from the ground up to have a relatively safe API, to demonstrate my programming ability (hire me :D). <br><br><br>p.s joking
+            </p1><br><br>
+            <p1>
+                <h1>Useful links for learning:</h1>
+                <a href="https://bukkit.fandom.com/wiki/Main_Page">Bukkit Fandom</a> | Great for getting to grips with basic Java and coding practises
+            </p1>
+        </div>
+        <div>
+            <h1>Plugin crash course</h1>
+            <p1>
+                Plugins are JAR files that are loaded by the JVM class loader, scanning for annotations like @EventHandler for event methods, implementations of certain interfaces
+                or abstract classes (Like JavaPlugin or Listener) + respective overrides (like the onEnable() entry point) and data files, loading it into memory. They can
+                be used to add custom game logic, packet handling and with asset packages bundled to the client, custom items and entities. The beauty of plugins is that they
+                are completely server side, allowing for complete control for the developer.
+                <br><br>
+                Plugins are located in the /plugins folder in the server's root directory. Exported plugins should be Java binaries stored as a JAR, and should be in the plugin
+                folder. Their special data folder should be located at /plugins/"plugin_name", and the jar at /plugins/"plugin_name".jar
+            </p1><br>
+            <p1>
+                Plugin jar datastructure should be as follows:<br>
+                DataStructure:<br>
+                ./plugin.txt<br>
+                ./path.to.package.with.main.class/MainClass<br>
+                The rest is up to you! It's just Java!
+            </p1>
+            <h2>Plugin.txt</h2>
+            <p1>
+                This file stores data about the plugin that is scanned upon load. The current, and required data points are all in the following :<br>
+                name: TestPlugin
+                author: Jephacake
+                description: This is a test plugin!
+                version: 1.0
+                spectre_version: 1.0
+                main: (main class location) pathtopackagewithmainclass.MainClass
+            </p1>
+        </div>
+    </body>
+</html>
